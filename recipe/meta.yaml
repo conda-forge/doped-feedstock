@@ -1,5 +1,5 @@
 {% set name = "doped" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/SMTG-UCL/doped/archive/{{ version }}.tar.gz
-  sha256: e2cc04b260803f81ed1c1d459ef0522f2d9b7ce5acc8ad1e505a3e52a36fbbac
+  sha256: dadbe46547b52361c84322ba9913cab35a37bb5fd2b3d1a619211ffc577b76f9
 
 
 # PyPI (no test files...)
@@ -17,7 +17,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -25,11 +25,13 @@ requirements:
     - python >=3.7,<3.11
   run:
     - python >=3.7,<3.11
-    - ase
     - tabulate
     - matplotlib-base
     - numpy >=1.21.0
     - pymatgen <2022.8.23
+    - monty
+    - packaging
+    - pandas
 
 test:
   imports:
