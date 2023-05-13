@@ -25,11 +25,13 @@ requirements:
     - python >=3.7,<3.11
   run:
     - python >=3.7,<3.11
-    - ase
     - tabulate
     - matplotlib-base
     - numpy >=1.21.0
     - pymatgen <2022.8.23
+    - monty
+    - packaging
+    - pandas
 
 test:
   imports:
