@@ -11,7 +11,9 @@ Summary: Python package to setup, process and analyse solid-state defect calcula
 
 Development: https://github.com/SMTG-UCL/doped
 
-DOPED is a Python package for setting up, processing, and analyzing solid-state defect calculations with VASP.
+Documentation: https://doped.readthedocs.io/en/latest/
+
+doped is a Python package for setting up, processing, and analyzing solid-state defect calculations with VASP.
 
 
 Current build status
