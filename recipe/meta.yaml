@@ -1,5 +1,5 @@
 {% set name = "doped" %}
-{% set version = "1.1.2" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/SMTG-UCL/doped/archive/{{ version }}.tar.gz
-  sha256: dadbe46547b52361c84322ba9913cab35a37bb5fd2b3d1a619211ffc577b76f9
+  sha256: 2319586f6ca12ba10c7f28ab17c2388224e8c490b9b8d674e44760bde8d52a6f
 
 
 # PyPI (no test files...)
@@ -22,15 +22,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7,<3.11
+    - python >=3.8
   run:
-    - python >=3.7,<3.11
+    - python >=3.8
     - tabulate
     - matplotlib-base
     - numpy >=1.21.0
-    - pymatgen <2022.8.23
+    - pymatgen >=2023.5.8  # imposed by pymatgen-analysis-defects
+    - pymatgen-analysis-defects >=2023.8.22
     - monty
-    - packaging
+    - shakenbreak >=3.0.0
     - pandas
 
 test:
@@ -43,7 +44,8 @@ about:
   license_file: LICENSE
   summary: Python package to setup, process and analyse solid-state defect calculations with VASP
   description: |
-    DOPED is a Python package for setting up, processing, and analyzing solid-state defect calculations with VASP.
+    doped is a Python package for setting up, processing, and analyzing solid-state defect calculations with VASP.
+  doc_url: https://doped.readthedocs.io/en/latest/
   dev_url: https://github.com/SMTG-UCL/doped
 
 extra:
