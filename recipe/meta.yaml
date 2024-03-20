@@ -35,8 +35,7 @@ requirements:
     - shakenbreak >=3.3.1
     - pandas
     - filelock
-    - pip:
-      - pydefect
+    # - pydefect  # not available on conda-forge currently, will update in future if it is. User installation instructions say to install afterwards with pip
 
 test:
   imports:
