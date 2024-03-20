@@ -34,8 +34,9 @@ requirements:
     - pymatgen-analysis-defects >=2023.8.22
     - shakenbreak >=3.3.1
     - pandas
-    - pydefect
     - filelock
+    - pip:
+      - pydefect
 
 test:
   imports:
