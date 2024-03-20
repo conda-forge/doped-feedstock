@@ -3,17 +3,17 @@ About doped-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/doped-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/SMTG-UCL/doped
+Home: https://github.com/SMTG-Bham/doped
 
 Package license: MIT
 
 Summary: Python package to setup, process and analyse solid-state defect calculations with VASP
 
-Development: https://github.com/SMTG-UCL/doped
+Development: https://github.com/SMTG-Bham/doped
 
 Documentation: https://doped.readthedocs.io/en/latest/
 
-doped is a Python package for setting up, processing, and analyzing solid-state defect calculations with VASP.
+doped is a Python software for the generation, pre-/post-processing and analysis of defect supercell calculations, implementing the defect simulation workflow in an efficient, reproducible, user-friendly yet powerful and fully-customisable manner.
 
 
 Current build status
