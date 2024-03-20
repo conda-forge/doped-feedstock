@@ -16,37 +16,40 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.9
   run:
-    - python >=3.8
+    - python >=3.9
     - tabulate
-    - matplotlib-base
+    - matplotlib-base >=3.5.2
     - numpy >=1.21.0
-    - pymatgen >=2023.5.8  # imposed by pymatgen-analysis-defects
+    - pymatgen >=2023.11.12  # limiting factor: POTCAR_STATS_PATH available from pymatgen.io.vasp.inputs
+    - spglib ==2.0.2  # dependent of pymatgen, but explicitly set to 2.0.2 here to avoid unnecessary warnings
+      # see https://github.com/spglib/spglib/issues/338; remove this limit when issue resolved
     - pymatgen-analysis-defects >=2023.8.22
-    - monty
-    - shakenbreak >=3.0.0
+    - shakenbreak >=3.3.1
     - pandas
+    - pydefect
+    - filelock
 
 test:
   imports:
     - doped
 
 about:
-  home: https://github.com/SMTG-UCL/doped
+  home: https://github.com/SMTG-Bham/doped
   license: MIT
   license_file: LICENSE
   summary: Python package to setup, process and analyse solid-state defect calculations with VASP
   description: |
-    doped is a Python package for setting up, processing, and analyzing solid-state defect calculations with VASP.
+    doped is a Python software for the generation, pre-/post-processing and analysis of defect supercell calculations, implementing the defect simulation workflow in an efficient, reproducible, user-friendly yet powerful and fully-customisable manner.
   doc_url: https://doped.readthedocs.io/en/latest/
-  dev_url: https://github.com/SMTG-UCL/doped
+  dev_url: https://github.com/SMTG-Bham/doped
 
 extra:
   recipe-maintainers:
