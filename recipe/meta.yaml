@@ -1,5 +1,5 @@
 {% set name = "doped" %}
-{% set version = "2.3.3" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/SMTG-UCL/doped/archive/{{ version }}.tar.gz
-  sha256: 73a365e9beb67206668e1ee955da7f58084e5df1356c0bec027899cc9d8eb894
+  sha256: 8de948c3068016c423f900ed6b5595c7fbfc1e697041f82bddef27de603b5023
 
 
 # PyPI (no test files...)
@@ -16,7 +16,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
