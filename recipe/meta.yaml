@@ -16,15 +16,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - tabulate
     - matplotlib-base >=3.5.2
     - numpy >=1.21.0
@@ -41,6 +41,8 @@ requirements:
     # - pydefect  # not available on conda-forge currently, will update in future if it is. User installation instructions say to install afterwards with pip
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - doped
 
