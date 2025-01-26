@@ -9,7 +9,6 @@ source:
   url: https://github.com/SMTG-UCL/doped/archive/{{ version }}.tar.gz
   sha256: eed72a4887dd63f1155efc650f6745a767a3603e81b07f5d3125f69534bf48d5
 
-
 # PyPI (no test files...)
 #  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
 #  sha256: a1eca51ccdc1fdc9e71e39d1f864c4cf472c7452fa86c717ab192688afa9a933
@@ -28,16 +27,14 @@ requirements:
     - tabulate
     - matplotlib-base >=3.5.2
     - numpy >=1.21.0
-    - pymatgen >=2023.11.12  # limiting factor: POTCAR_STATS_PATH available from pymatgen.io.vasp.inputs
-    - spglib >=2.4.0  # previously explicitly set to <=2.0.2 to avoid unnecessary warnings
-    # (https://github.com/spglib/spglib/issues/338) but causing dependency issues
-    # (https://github.com/SMTG-Bham/doped/issues/73), being worked on in
-    # https://github.com/spglib/spglib/issues/462 -- update Troubleshooting.rst and spglib warning in
-    # doped.utils.symmetry when finally resolved
+    - pymatgen >=2024.9.10  # needs SymmetryUndeterminedError class
     - pymatgen-analysis-defects >=2023.8.22
-    - shakenbreak >=3.3.1
+    - shakenbreak >=3.3.4  # oxi-state functions renaming
     - pandas
     - filelock
+    - cmcrameri >=1.4  # for colour-maps; >=1.4 required for cmcrameri.cm.cmaps definition
+    - matplotlib-label-lines  # for labelling lines in matplotlib plots
+    - dscribe  # for defect site guessing using SOAP analysis
     # - pydefect  # not available on conda-forge currently, will update in future if it is. User installation instructions say to install afterwards with pip
 
 test:
