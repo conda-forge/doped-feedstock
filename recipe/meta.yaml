@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/SMTG-UCL/doped/archive/{{ version }}.tar.gz
+  url: https://github.com/SMTG-Bham/doped/archive/{{ version }}.tar.gz
   sha256: 126f5ce817d69912fe985e36985db0a918ad2cf717c5b2587ac1857876d6e436
 
 # PyPI (no test files...)
