@@ -41,8 +41,9 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
-  imports:
-    - doped
+#  imports:
+#    - doped
+# dropped due to unguarded vise import in 3.1.0, uncomment these in next version (now guarded)
 
 about:
   home: https://github.com/SMTG-Bham/doped
