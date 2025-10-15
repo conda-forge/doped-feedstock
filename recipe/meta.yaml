@@ -28,7 +28,7 @@ requirements:
     - tabulate
     - matplotlib-base >=3.5.2
     - numpy >=1.21.0
-    - pymatgen >=2024.9.10  # needs SymmetryUndeterminedError class
+    - pymatgen >=2025.10.7  # LinearAssignment refactoring
     - pymatgen-analysis-defects >=2023.8.22
     - shakenbreak >=3.3.4  # oxi-state functions renaming
     - pandas
@@ -41,15 +41,14 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
-#  imports:
-#    - doped
-# dropped due to unguarded vise import in 3.1.0, uncomment these in next version (now guarded)
+ imports:
+   - doped
 
 about:
   home: https://github.com/SMTG-Bham/doped
   license: MIT
   license_file: LICENSE
-  summary: Python package to setup, process and analyse solid-state defect calculations with VASP
+  summary: Python package to setup, process and analyse solid-state defect calculations/
   description: |
     doped is a Python software for the generation, pre-/post-processing and analysis of defect supercell calculations, implementing the defect simulation workflow in an efficient, reproducible, user-friendly yet powerful and fully-customisable manner.
   doc_url: https://doped.readthedocs.io/en/latest/
