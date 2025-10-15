@@ -41,8 +41,8 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
- imports:
-   - doped
+  imports:
+    - doped
 
 about:
   home: https://github.com/SMTG-Bham/doped
