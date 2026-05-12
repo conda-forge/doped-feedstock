@@ -15,7 +15,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -23,20 +23,20 @@ requirements:
     - pip
     - python {{ python_min }}
     - setuptools
-  run:
+  run:  # TODO: Likely a number of updates here (pmg-core, mp-api etc) for doped v4
     - python >={{ python_min }}
     - tabulate
     - matplotlib-base >=3.5.2
     - numpy >=1.21.0
     - pymatgen >=2025.10.7  # LinearAssignment refactoring
     - pymatgen-analysis-defects >=2023.8.22
+    - pydefect
     - shakenbreak >=3.3.4  # oxi-state functions renaming
     - pandas
     - filelock
     - cmcrameri >=1.4  # for colour-maps; >=1.4 required for cmcrameri.cm.cmaps definition
     - matplotlib-label-lines  # for labelling lines in matplotlib plots
     - dscribe  # for defect site guessing using SOAP analysis
-    # - pydefect  # not available on conda-forge currently, will update in future if it is. User installation instructions say to install afterwards with pip
 
 test:
   requires:
